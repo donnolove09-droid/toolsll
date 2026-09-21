@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: regff-ob55
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python health_server.py
+    healthCheckPath: /
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: ACCOUNT_COUNT
+        value: "100"
+      - key: THREAD_COUNT
+        value: "3"
+      - key: RARITY_THRESHOLD
+        value: "8"
+      - key: REGION
+        value: "VN"
+      - key: AUTO_START
+        value: "true"
+      - key: PORT
+        value: "10000"
