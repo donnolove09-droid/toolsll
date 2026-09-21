@@ -6,7 +6,7 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: python health_server.py
-    healthCheckPath: /
+    healthCheckPath: /health
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
@@ -18,7 +18,13 @@ services:
         value: "8"
       - key: REGION
         value: "VN"
+      - key: BASE_NAME
+        value: "WJXAZ"
+      - key: BASE_PASSWORD
+        value: "TELE@WJXAZ"
       - key: AUTO_START
+        value: "true"
+      - key: RUN_ONCE
         value: "true"
       - key: PORT
         value: "10000"
